@@ -15,6 +15,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_26_143528) do
     t.string "character_class"
     t.datetime "created_at", null: false
     t.integer "hp"
+    t.integer "level"
     t.string "name"
     t.integer "player_id", null: false
     t.integer "table_id", null: false

@@ -4,5 +4,5 @@ class Player < ApplicationRecord
   has_many :players_table
   has_many :tables, through: :players_table
 
-  validates :nome, presence: true
+  validates :name, presence: true
 end
