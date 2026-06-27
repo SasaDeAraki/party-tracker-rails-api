@@ -2,7 +2,7 @@ class TablesController < ApplicationController
   def index
     set_player
 
-    render json: @player.tables.all
+    render json: @player.tables.distinct
   end
 
   private
