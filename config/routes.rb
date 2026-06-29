@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :players do
-    resources :characters, only: [ :index, :show, :create ]
-    resources :tables, only: [ :index ]
+    resources :characters, only: [ :index, :show, :put, :destroy ]
+    resources :tables, only: [ :index, :show ]
+      resources :characters, only: [ :index, :show, :create, :put, :destroy ]
   end
 
   resources :tables do
-    resources :characters, only: [ :index, :show ]
-    resources :players, only: [ :index ]
+    resources :characters, only: [ :index, :show, :create, :put, :destroy ]
+    resources :players, only: [ :index, :show, :put ]
   end
 
   resources :characters
